@@ -24,24 +24,24 @@ function handleFilter(event) {
           class="validate"
           placeholder="Enter movie"
           v-model="searchValue"
-          @keydown.enter="searchMovies(searchValue, type)"
+          @change="searchMovies(searchValue, type)"
       />
     </div>
     <div class="radio">
       <label for="all"  class="radio__label ">
-        <input type="radio" id="all" value="All" v-model="type" @click="handleFilter"/>
+        <input type="radio" id="all" value="All" v-model="type" @input="handleFilter"/>
         <span class="radio__text ">
           All
         </span>
       </label>
       <label for="movie" class="radio__label">
-        <input type="radio" id="movie" value="Movie" v-model="type"  @click="handleFilter"/>
+        <input type="radio" id="movie" value="Movie" v-model="type"  @input="handleFilter"/>
         <span class="radio__text">
           Movie
         </span>
       </label>
       <label for="series" class="radio__label">
-        <input type="radio" id="series" value="Series" v-model="type"  @click="handleFilter"/>
+        <input type="radio" id="series" value="Series" v-model="type"  @input="handleFilter"/>
         <span class="radio__text">
           Series
         </span>
@@ -61,5 +61,8 @@ function handleFilter(event) {
 span::after{
   background-color: #7e57c2 !important;
   border: none !important;
+}
+input:focus{
+  border-bottom: 1px solid #7e57c2 !important;
 }
 </style>

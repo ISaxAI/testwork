@@ -26,3 +26,8 @@ defineProps({
 
   </div>
 </template>
+<style scoped>
+  .card-image{
+    width: 100%;
+  }
+</style>
