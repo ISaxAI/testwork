@@ -1,12 +1,14 @@
 <script setup>
-import { ref }  from "vue"
-const count = ref(0)
+import Header from "@/layout/header/Header.vue";
+import Footer from "@/layout/footer/Footer.vue";
+import Main from "@/layout/main/Main.vue";
+
 </script>
 
 <template>
-  <main>
-
-  </main>
+  <Header />
+  <Main />
+  <Footer />
 </template>
 
 <style scoped>
