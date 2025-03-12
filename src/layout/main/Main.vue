@@ -21,9 +21,9 @@ onMounted(()=>{
   })
 
 })
-function searchMovies(searchValue) {
+function searchMovies(searchValue='matrix', type={}) {
   loading.value = true
-  fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchValue}}`)
+  fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchValue}${type !== 'all' ? `&type=${type}` : ''}`)
       .then(response => response.json())
       .then(data => {
         movies.value = data.Search;
